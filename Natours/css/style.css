@@ -6,3 +6,132 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-family: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh;
+  /* this means the header will take up 95% of the current view point height */
+  background-image: linear-gradient(
+    to right bottom, 
+    rgba(126, 213, 111, 0.8), 
+    rgba(40, 180, 133, 0.8)
+  ),
+  /* linear gradient from light to dark green with 80% opacity, starting from the left and going diagonally to the bottom  */
+  url(../img/hero.jpg);
+  background-size: cover;
+  /* cover fills the whole space occupied by the background image */
+  background-position: top;
+  /* when the window size is changed, the image will keep the top position fixed  */
+  position: relative;
+  /* the logo positions of left and top relate back to this parent element */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
+  /* this creates the clipping effect in the bottom right corner */
+  /* each value pair is referring th how much of that corner (going clockwise) is clipped */
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+
+}
+
+.logo {
+  height: 35px;
+  /* because height is specified, the width is automatically configured by the browser, and vice versa */
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* the top and left percentages are in relation to the parent element */
+  transform: translate(-50%, -50%);
+  /* transform is in relation to this element, it will be pulled back in by half of the width (left 50%) and the top (left) */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  /* animation-iteration-count: 2; 
+  the amount of times the animation will occur*/
+  /* animation-delay: 3s; 
+  the animation won't start until this timer has finished*/
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;  
+
+  /* rather than state each animation element, they can all come under animation only */
+  animation: moveInRight ease-out 1s;
+}
+
+@keyframes moveInLeft {
+  /* at the start of the animation */
+  0% {
+    /* 0 opacity won't show the text  */
+    opacity: 0;
+    /* minus pixels will move the text towards the right */
+    transform: translate(-100px);
+  }
+
+  80% {
+    /* positive pixels will move towards the left */
+    transform: translate(10px);
+
+  }
+
+  /* at the end of the animation  */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    /* positive pixels will move towards the left */
+    transform: translate(100px);
+  }
+
+  80% {
+    /* minus pixels will move the text towards the right */
+    transform: translate(-10px);
+
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
