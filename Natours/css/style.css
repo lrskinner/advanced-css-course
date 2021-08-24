@@ -26,19 +26,19 @@ body {
   height: 95vh;
   /* this means the header will take up 95% of the current view point height */
   background-image: linear-gradient(
-    to right bottom, 
-    rgba(126, 213, 111, 0.8), 
-    rgba(40, 180, 133, 0.8)
-  ),
-  /* linear gradient from light to dark green with 80% opacity, starting from the left and going diagonally to the bottom  */
-  url(../img/hero.jpg);
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    /* linear gradient from light to dark green with 80% opacity, starting from the left and going diagonally to the bottom  */
+      url(../img/hero.jpg);
   background-size: cover;
   /* cover fills the whole space occupied by the background image */
   background-position: top;
   /* when the window size is changed, the image will keep the top position fixed  */
   position: relative;
   /* the logo positions of left and top relate back to this parent element */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* this creates the clipping effect in the bottom right corner */
   /* each value pair is referring th how much of that corner (going clockwise) is clipped */
 }
@@ -47,13 +47,17 @@ body {
   position: absolute;
   top: 40px;
   left: 40px;
-
 }
 
 .logo {
   height: 35px;
   /* because height is specified, the width is automatically configured by the browser, and vice versa */
 }
+
+/* animation is only activated when element is hovered over
+.logo:hover {
+  animation: moveInRight 1s ease-in;
+} */
 
 .text-box {
   position: absolute;
@@ -62,11 +66,14 @@ body {
   /* the top and left percentages are in relation to the parent element */
   transform: translate(-50%, -50%);
   /* transform is in relation to this element, it will be pulled back in by half of the width (left 50%) and the top (left) */
+  text-align: center;
+  /* this centers text within this element, i.e. the header, sub header and button */
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -89,11 +96,13 @@ body {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  letter-spacing: 17.4px;  
+  letter-spacing: 17.4px;
 
   /* rather than state each animation element, they can all come under animation only */
   animation: moveInRight ease-out 1s;
 }
+
+/* ANIMATIONS */
 
 @keyframes moveInLeft {
   /* at the start of the animation */
@@ -107,7 +116,6 @@ body {
   80% {
     /* positive pixels will move towards the left */
     transform: translate(10px);
-
   }
 
   /* at the end of the animation  */
@@ -127,11 +135,86 @@ body {
   80% {
     /* minus pixels will move the text towards the right */
     transform: translate(-10px);
-
   }
 
   100% {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    /* positive pixels will move towards the left */
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* : represents a pseudo element  */
+
+/* link and visited both target the element before and after its clicked and overides the default blue link before and purple after its clicked */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  /* this gets rid of the default line under a link */
+  padding: 15px 40px;
+  display: inline-block;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn:hover {
+  /* this moves the element up by isolating the Y axis and using a negative px */
+  transform: translateY(-2px);
+  /* box-shadow values: x axis, y axis, blur, then colour with opacity on the end - .3 = 30%  */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* when an element is clicked */
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+  border-radius: 50px;
+}
+
+.btn::after {
+  /* content and display are mandatory for the after psuedo element, even it they're left empty */
+  /* it's considered a child element */
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom .5s ease-out .75s;
+  /* automatically apply the 0% rules to the animation before it starts, so the button isn't visible before the animation is carried out  */
+  animation-fill-mode: backwards;
 }
