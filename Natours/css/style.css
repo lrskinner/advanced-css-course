@@ -7,19 +7,32 @@ Dark green: #28b485
 
 */
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* by shifting border-box down to the body element and adding inherit to this element, border-box will be applied to everything  */
+  /* this is considered best practice  */
+  Box-sizing: inherit;
+}
+
+html {
+  /* root font size is declared in the html element  */
+  /*1rem = 10px */
+  font-size: 10px;
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-family: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  /* padding: 30px; */
+  /* to get 30px based on rem(10px) 30 / 10 = 3    */
+  padding: 3rem;
+  box-sizing: border-box;
 }
 
 .header {
@@ -45,12 +58,15 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  /* top: 40px;
+  left: 40px; */
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  /* height: 35px; */
+  height: 3.5rem;
   /* because height is specified, the width is automatically configured by the browser, and vice versa */
 }
 
@@ -73,14 +89,17 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  /* font-size: 60px; */
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  /* letter-spacing: 35px; */
+  letter-spacing: 3.5rem;
 
   animation-name: moveInLeft;
   animation-duration: 1s;
@@ -94,9 +113,11 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  /* letter-spacing: 17.4px; */
+  letter-spacing: 1.75rem;
 
   /* rather than state each animation element, they can all come under animation only */
   animation: moveInRight ease-out 1s;
@@ -110,12 +131,14 @@ body {
     /* 0 opacity won't show the text  */
     opacity: 0;
     /* minus pixels will move the text towards the right */
-    transform: translate(-100px);
+    /* transform: translate(-100px); */
+    transform: translate(-10rem);
   }
 
   80% {
     /* positive pixels will move towards the left */
-    transform: translate(10px);
+    /* transform: translate(10px); */
+    transform: translate(1rem);
   }
 
   /* at the end of the animation  */
@@ -129,12 +152,14 @@ body {
   0% {
     opacity: 0;
     /* positive pixels will move towards the left */
-    transform: translate(100px);
+    /* transform: translate(100px); */
+    transform: translate(10rem);
   }
 
   80% {
     /* minus pixels will move the text towards the right */
-    transform: translate(-10px);
+    /* transform: translate(-10px); */
+    transform: translate(-1rem);
   }
 
   100% {
@@ -147,7 +172,8 @@ body {
   0% {
     opacity: 0;
     /* positive pixels will move towards the left */
-    transform: translateY(30px);
+    /* transform: translateY(30px); */
+    transform: translateY(3rem);
   }
 
   100% {
@@ -164,29 +190,35 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   /* this gets rid of the default line under a link */
-  padding: 15px 40px;
+  /* padding: 15px 40px; */
+  padding: 1.5rem 4rem;
   display: inline-block;
+  border-radius: 10rem;
   transition: all 0.2s;
   position: relative;
+  font-size: 1.6rem;
 }
 
 .btn:hover {
   /* this moves the element up by isolating the Y axis and using a negative px */
   transform: translateY(-2px);
   /* box-shadow values: x axis, y axis, blur, then colour with opacity on the end - .3 = 30%  */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 /* when an element is clicked */
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); */
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3);
 }
 
 .btn-white {
   background-color: #fff;
   color: #777;
-  border-radius: 50px;
+  /* border-radius: 50px; */
+  border-radius: 5rem;
 }
 
 .btn::after {
@@ -196,7 +228,8 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 50px;
+  /* border-radius: 50px; */
+  border-radius: 5rem;
   position: absolute;
   top: 0;
   left: 0;
