@@ -1,0 +1,47 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-family: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-grey-dark;
+  /* padding: 30px; */
+  /* to get 30px based on rem(10px) 30 / 10 = 3    */
+  padding: 3rem;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  /* margin-bottom: 60px; */
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    /* font-size: 60px; */
+    font-size: 6rem;
+    font-weight: 400;
+    /* letter-spacing: 35px; */
+    letter-spacing: 3.5rem;
+  
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  
+    /* animation-iteration-count: 2; 
+    the amount of times the animation will occur*/
+    /* animation-delay: 3s; 
+    the animation won't start until this timer has finished*/
+  }
+  
+  &--sub {
+    display: block;
+    /* font-size: 20px; */
+    font-size: 2rem;
+    font-weight: 700;
+    /* letter-spacing: 17.4px; */
+    letter-spacing: 1.75rem;
+  
+    /* rather than state each animation element, they can all come under animation only */
+    animation: moveInRight ease-out 1s;
+  }
+}

@@ -1,0 +1,74 @@
+/* : represents a pseudo element  */
+
+/* link and visited both target the element before and after its clicked and overides the default blue link before and purple after its clicked */
+
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* this gets rid of the default line under a link */
+    /* padding: 15px 40px; */
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    /* this moves the element up by isolating the Y axis and using a negative px */
+    transform: translateY(-2px);
+    /* box-shadow values: x axis, y axis, blur, then colour with opacity on the end - .3 = 30%  */
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+
+  }
+  
+  /* when an element is clicked */
+  &:active {
+    transform: translateY(-1px);
+    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); */
+    box-shadow: 0 .5rem 1rem rgba($color-black, 0.3);
+  }
+  
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    /* border-radius: 50px; */
+    border-radius: 5rem;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+  
+  &::after {
+    /* content and display are mandatory for the after psuedo element, even it they're left empty */
+    /* it's considered a child element */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    /* border-radius: 50px; */
+    border-radius: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+  
+  &--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    /* automatically apply the 0% rules to the animation before it starts, so the button isn't visible before the animation is carried out  */
+    animation-fill-mode: backwards;
+  }
+}
+

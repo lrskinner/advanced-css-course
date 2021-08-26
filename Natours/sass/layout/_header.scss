@@ -1,0 +1,47 @@
+.header {
+  height: 95vh;
+  /* this means the header will take up 95% of the current view point height */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    /* linear gradient from light to dark green with 80% opacity, starting from the left and going diagonally to the bottom  */
+      url(../img/hero.jpg);
+  background-size: cover;
+  /* cover fills the whole space occupied by the background image */
+  background-position: top;
+  /* when the window size is changed, the image will keep the top position fixed  */
+  position: relative;
+  /* the logo positions of left and top relate back to this parent element */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* this creates the clipping effect in the bottom right corner */
+  /* each value pair is referring th how much of that corner (going clockwise) is clipped */
+
+  // child elements can be nested inside the parent element using '&'
+  &__logo-box {
+    position: absolute;
+    /* top: 40px;
+    left: 40px; */
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    /* height: 35px; */
+    height: 3.5rem;
+    /* because height is specified, the width is automatically configured by the browser, and vice versa */
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* the top and left percentages are in relation to the parent element */
+    transform: translate(-50%, -50%);
+    /* transform is in relation to this element, it will be pulled back in by half of the width (left 50%) and the top (left) */
+    text-align: center;
+    /* this centers text within this element, i.e. the header, sub header and button */
+  }
+
+}

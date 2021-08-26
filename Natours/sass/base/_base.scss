@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* by shifting border-box down to the body element and adding inherit to this element, border-box will be applied to everything  */
+  /* this is considered best practice  */
+  Box-sizing: inherit
+}
+
+html { 
+  /* root font size is declared in the html element  */
+  /*1rem = 10px */
+  font-size: 10px;
+}
+
+body {
+  box-sizing: border-box;
+}

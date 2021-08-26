@@ -1,0 +1,58 @@
+/* ANIMATIONS */
+
+@keyframes moveInLeft {
+  /* at the start of the animation */
+  0% {
+    /* 0 opacity won't show the text  */
+    opacity: 0;
+    /* minus pixels will move the text towards the right */
+    /* transform: translate(-100px); */
+    transform: translate(-10rem);
+  }
+
+  80% {
+    /* positive pixels will move towards the left */
+    /* transform: translate(10px); */
+    transform: translate(1rem);
+  }
+
+  /* at the end of the animation  */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    /* positive pixels will move towards the left */
+    /* transform: translate(100px); */
+    transform: translate(10rem);
+  }
+
+  80% {
+    /* minus pixels will move the text towards the right */
+    /* transform: translate(-10px); */
+    transform: translate(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    /* positive pixels will move towards the left */
+    /* transform: translateY(30px); */
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
