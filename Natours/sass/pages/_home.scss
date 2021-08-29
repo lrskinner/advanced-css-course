@@ -1,0 +1,7 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  // margin-top fills in the white space of the clipped section with the color specified in this section
+  // by stating a negative value, it is applied vertically 
+  margin-top: -20vh;
+}

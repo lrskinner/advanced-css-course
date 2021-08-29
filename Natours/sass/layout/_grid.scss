@@ -1,7 +1,6 @@
 .row {
   // if the viewport is smaller than 114 rem, max-width will allow the element to take up 100% of the space available
   max-width: $grid-width;
-  background-color: #eee;
   // this centers block elements 
   margin: 0 auto;
   
@@ -19,7 +18,6 @@
   // attribute
   // all classes starting with col- will have these attributes
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {
