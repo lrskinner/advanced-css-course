@@ -1,0 +1,44 @@
+.composition {
+  position: relative;
+  //set position in the parent element to relative, so absolute can be applied to the child elements below
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .4);  
+    border-radius: 2px;
+    position: absolute;  
+    z-index: 1;
+    transition: all .2s;
+    outline-offset: 2rem; //creates space between the pics and the border which is specified in __photo:hover
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+      //pic will sit on the left side of the parent element and -20px above it
+    }
+    
+    &--p2 {
+      right: 0;
+      top: 2rem;
+      //pic will sit on the right side of the parent element and 20px below it
+    }
+    
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+      //pic will sit 20% in from the left side of the parent element and 100px below it
+    }
+
+    &:hover {
+      outline: 1.5rem solid $color-primary; //acts as a border      
+      transform: scale(1.05) translateY(-.5rem); //enlargens the pic that is hovered over
+      box-shadow: 0 2.5rem 4rem rgba($color-black, .5);  
+      z-index: 5;
+    }
+  }
+
+  //selects the chole composition element is hovered over, and only the photo elements that are NOT hovered over too
+  &:hover &__photo:not(:hover) {
+    transform: scale(.95); //pic not hovered over gets a bit smaller
+  }
+}
