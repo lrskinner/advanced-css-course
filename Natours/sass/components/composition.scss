@@ -1,0 +1,38 @@
+.composition {
+  position: relative;
+
+  &__photo {
+    width: 55%;//it's good to use percentages with img widths so they scale as the viewport changes
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    // border-radius: 2px;
+    position: absolute;
+    z-index: 1;
+    transition: all .2s;
+    outline-offset: 2rem;
+
+    &--p1 {
+      left: 0rem;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+    &:hover {
+        outline: 1.5rem solid $color-primary; //similar to border but creates padding between the img and border
+        transform: scale(1.05) translateY(-.5rem);//slightly larger and moves up
+        box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+        z-index: 2;
+    }
+  }
+  //inside composition selector, target the items that AREN'T being hovered over
+  &:hover &__photo:not(:hover) {
+      transform: scale(.95);
+  }
+}

@@ -14,7 +14,7 @@
     border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
 
   &:hover {
@@ -28,16 +28,15 @@
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0;
     }
-
   }
-  
+
   /* when an element is clicked */
   &:active {
     transform: translateY(-1px);
     /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); */
-    box-shadow: 0 .5rem 1rem rgba($color-black, 0.3);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.3);
   }
-  
+
   &--white {
     background-color: $color-white;
     color: $color-grey-dark;
@@ -48,7 +47,7 @@
       background-color: $color-white;
     }
   }
-  
+
   &::after {
     /* content and display are mandatory for the after psuedo element, even it they're left empty */
     /* it's considered a child element */
@@ -64,11 +63,35 @@
     z-index: -1;
     transition: all 0.4s;
   }
-  
+
   &--animated {
-    animation: moveInBottom .5s ease-out .75s;
+    animation: moveInBottom 0.5s ease-out 0.75s;
     /* automatically apply the 0% rules to the animation before it starts, so the button isn't visible before the animation is carried out  */
     animation-fill-mode: backwards;
   }
 }
 
+.btn-text {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    font-size: $default-font-size;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: translateY(-10px);
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    transform: translateY(0px);
+  }
+}
