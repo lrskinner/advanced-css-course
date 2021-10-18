@@ -1,0 +1,16 @@
+.card {
+  perspective: 150rem; // this property needs to be on the parent element of which ever element you're targeting
+  -moz-perspective: 150rem; // for this selector to work in mozilla firefox
+
+  &__side {
+    background-color: orangered;
+    height: 50rem;
+    transition: all 0.8s;
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  &:hover &__side {
+    transform: rotateY(180deg);
+  }
+}

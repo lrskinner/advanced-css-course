@@ -291,6 +291,21 @@ body {
   transform: translateY(-1.5rem) scale(1.03);
 }
 
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+}
+.card__side {
+  background-color: orangered;
+  height: 50rem;
+  transition: all 0.8s;
+  color: #fff;
+  font-size: 2rem;
+}
+.card:hover .card__side {
+  transform: rotateY(180deg);
+}
+
 .header {
   height: 95vh;
   /* this means the header will take up 95% of the current view point height */
