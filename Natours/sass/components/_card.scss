@@ -1,16 +1,90 @@
+// FUNCTIONALITY
 .card {
   perspective: 150rem; // this property needs to be on the parent element of which ever element you're targeting
+  // the higher the value, the less dramatic perspective
   -moz-perspective: 150rem; // for this selector to work in mozilla firefox
+  position: relative;
+  height: 50rem;
 
   &__side {
-    background-color: orangered;
     height: 50rem;
-    transition: all 0.8s;
+    transition: all 0.8s ease;
     color: #fff;
     font-size: 2rem;
+    position: absolute;
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    backface-visibility: hidden; // keeps the back element hidden until hovered over
+    border-radius: 3px;
+    overflow: hidden; // the images on the front of the cards were overflowing and removing the border radius 
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      background-color: darkgreen;
+      transform: rotateY(
+        180deg
+      ); // the back of the card starts as half turned around
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light, $color-secondary-dark)
+        
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light, $color-primary-dark)
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light, $color-tertiary-dark)
+      }
+    }
   }
 
-  &:hover &__side {
-    transform: rotateY(180deg);
+  &:hover &__side--front {
+    transform: rotateY(-180deg); // the minus makes the card turn to the left instead of the right
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0deg); // the back flips back to the front when hovered
+  }
+
+
+  // FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen; // newish property that works like photoshop colour editing/effects 
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light, $color-secondary-dark),
+          url(../img/nat-5.jpg);
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light, $color-primary-dark),
+          url(../img/nat-6.jpg);
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light, $color-tertiary-dark),
+          url(../img/nat-7.jpg);
+    }
   }
 }
