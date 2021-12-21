@@ -156,6 +156,14 @@ body {
   margin-bottom: 2rem;
 }
 
+.u-margin-top-big {
+  margin-top: 8rem;
+}
+
+.u-margin-top-huge {
+  margin-top: 10rem;
+}
+
 /* : represents a pseudo element  */
 /* link and visited both target the element before and after its clicked and overides the default blue link before and purple after its clicked */
 .btn {
@@ -197,6 +205,15 @@ body {
 }
 .btn--white::after {
   background-color: #fff;
+}
+.btn--green {
+  background-color: #55c57a;
+  color: #fff;
+  /* border-radius: 50px; */
+  border-radius: 5rem;
+}
+.btn--green::after {
+  background-color: #55c57a;
 }
 .btn::after {
   /* content and display are mandatory for the after psuedo element, even it they're left empty */
@@ -295,13 +312,11 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem;
+  height: 52rem;
 }
 .card__side {
-  height: 50rem;
+  height: 52rem;
   transition: all 0.8s ease;
-  color: #fff;
-  font-size: 2rem;
   position: absolute;
   width: 100%;
   backface-visibility: hidden;
@@ -335,6 +350,10 @@ body {
   background-size: cover;
   height: 23rem;
   background-blend-mode: screen;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .card__picture--1 {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg);
@@ -344,6 +363,88 @@ body {
 }
 .card__picture--3 {
   background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg);
+}
+.card__heading {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  text-align: right;
+  width: 75%;
+}
+.card__heading-span {
+  padding: 1rem 1.5rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.card__heading-span--1 {
+  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), #ff7730);
+}
+.card__heading-span--2 {
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), #28b485);
+}
+.card__heading-span--3 {
+  background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), #5643fa);
+}
+.card__details {
+  padding: 3rem;
+}
+.card__details ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+}
+.card__details ul li {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.card__details ul li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+}
+.card__price-box {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 8rem;
+}
+.card__price-only {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.card__price-value {
+  font-size: 6rem;
+  font-weight: 100;
+}
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 6rem;
+  font-size: 1.6rem;
+}
+.story__shape {
+  width: 15rem;
+  height: 15rem;
+  background-color: orangered;
+  float: left;
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
 }
 
 .header {
@@ -356,6 +457,7 @@ body {
   /* when the window size is changed, the image will keep the top position fixed  */
   position: relative;
   /* the logo positions of left and top relate back to this parent element */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* this creates the clipping effect in the bottom right corner */
   /* each value pair is referring th how much of that corner (going clockwise) is clipped */
@@ -439,8 +541,13 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -10rem;
+}
+
+.section-stories {
+  background-color: #f7f7f7;
+  padding: 15rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */

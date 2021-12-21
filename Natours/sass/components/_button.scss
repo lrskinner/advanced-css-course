@@ -48,6 +48,17 @@
     }
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+    /* border-radius: 50px; */
+    border-radius: 5rem;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }  
+
   &::after {
     /* content and display are mandatory for the after psuedo element, even it they're left empty */
     /* it's considered a child element */

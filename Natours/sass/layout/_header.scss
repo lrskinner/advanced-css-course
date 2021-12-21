@@ -14,6 +14,7 @@
   /* when the window size is changed, the image will keep the top position fixed  */
   position: relative;
   /* the logo positions of left and top relate back to this parent element */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* this creates the clipping effect in the bottom right corner */
   /* each value pair is referring th how much of that corner (going clockwise) is clipped */
