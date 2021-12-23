@@ -22,7 +22,7 @@
         <!-- add header block to elements (double underscore)  -->
         <img
           class="header__logo-box header__logo"
-          src="../Natours/img/logo-white.png"
+          src="/img/logo-white.png"
           alt="logo"
         />
       </div>
@@ -252,6 +252,17 @@
   </section>
 
   <section class="section-stories">
+
+    <div class="bg-video">
+      <!-- video attributes can be added in element - autoplay isn't great for accessibility, with exception to background videos -->
+      <video class="bg-video__content" autoplay muted loop>
+        <source src="img/video.mp4" type="video/mp4">
+        <source src="img/video.webm" type="video/webm">
+        <!-- if videos won't display, this text will display -->
+        Your browser is not supported 
+      </video>
+    </div>
+
     <div class="u-center-text u-margin-bottom-big">
       <h2 class="heading-secondary">
         We make people genuinely happy
@@ -261,7 +272,8 @@
     <div class="row">
       <div class="story">
         <figure class="story__shape">
-
+          <img src="img/nat-8.jpg" alt="Person on a tour" class="story__img">
+          <figcaption class="story__caption">Mary Smith</figcaption>
         </figure>
         <div class="story__text">
           <h3 class="heading-tertiary u-margin-bottom-small">I had the best week ever with my family</h3>
@@ -270,8 +282,24 @@
       </div>
     </div>
 
-  </section>
+    <div class="row">
+      <div class="story">
+        <figure class="story__shape">
+          <img src="img/nat-9.jpg" alt="Person on a tour" class="story__img">
+          <figcaption class="story__caption">Jack Wilson</figcaption>
+        </figure>
+        <div class="story__text">
+          <h3 class="heading-tertiary u-margin-bottom-small">Wow, my life is completley different now!</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, obcaecati fugiat deserunt totam exercitationem quam laboriosam beatae porro modi dolores veniam ducimus in similique? Quis quas pariatur distinctio. Atque, accusantium.</p>
+        </div>
+      </div>
+    </div>
 
+    <div class="u-center-text u-margin-top-huge">
+      <a href="#" class="btn-text">Read all stories &rarr;</a>
+    </div>
+
+  </section>
   </main>
 
     <!-- <section class="grid-test">

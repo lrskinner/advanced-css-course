@@ -1,23 +1,57 @@
 .story {
-    width: 75%;
-    margin: 0 auto;
-    box-shadow: 0 3rem 6rem rgba($color-black, .1);
-    background-color: $color-white;
-    border-radius: 3px;
-    padding: 6rem;
-    font-size: $default-font-size;
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, .6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg); //creates the skew effect of the section
 
-    &__shape {
-        width: 15rem;
-        height: 15rem;
-        background-color: orangered;
-        float: left;
-        -webkit-shape-outside: circle(50% at 50% 50%);
-        shape-outside: circle(50% at 50% 50%);
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%); // so text next to shape wraps around it
 
-        -webkit-clip-path: circle(50% at 50% 50%);
-        clip-path: circle(50% at 50% 50%);
-    }
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%); // to make square shape into a circle
+    transform: translateX(-3rem) skewX(12deg); // creates more space around the circle shape, skewX needs to be included in this one rule - 2 transform rules can't exist in the same element
+    position: relative; // needs to be relative for the absolute in __caption to work
+  }
+
+  &__img {
+    transform: translateX(-3.5rem) scale(1.4); // move image over to the left as the img are is larger than the circle and isn't centered. Also make image larger to begin with scale(1.4) = img size is 140%
+    transition: all .5s; // animation of img (smooth transition)
+    height: 100%;
+  }
+
+  &__text {
+    transform: skewX(12deg); // reverses the effect of the skew applied to the whole section
+  }
+
+  &__caption { // initial state before the hover on story div (caption is hidden & further down- 0 on y axis in transform)
+    position: absolute; // so caption sits ontop of the shape
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s; // animation of caption (smooth transition)
+  }
+
+  &:hover &__caption { // on hover the caption is visible & the y axis on the transform corrects itself back to -50% (middle of shape)
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-3.5rem) scale(1); // change img size to 100% on hover
+    filter: blur(3px) brightness(80%); // lower than 100% will darken, above 100% will brighten
+  }
 }
-
-//shape-outside not working currently - the text should wrap around the circle 
