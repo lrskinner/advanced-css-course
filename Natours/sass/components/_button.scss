@@ -3,6 +3,7 @@
 /* link and visited both target the element before and after its clicked and overides the default blue link before and purple after its clicked */
 
 .btn {
+  &, // this ensures that the below rules are also applied to btn
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -11,13 +12,17 @@
     /* padding: 15px 40px; */
     padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 10rem;
+    border-radius: $br-large;
     transition: all 0.2s;
     position: relative;
-    font-size: $default-font-size;
+    font-size: $font-size-default;
+
+    //change for the btn element
+    border: none;
+    cursor: pointer;
   }
 
-  &:hover {
+  &:hover{
     /* this moves the element up by isolating the Y axis and using a negative px */
     transform: translateY(-2px);
     /* box-shadow values: x axis, y axis, blur, then colour with opacity on the end - .3 = 30%  */
@@ -31,7 +36,9 @@
   }
 
   /* when an element is clicked */
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1px);
     /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); */
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.3);
@@ -39,9 +46,9 @@
 
   &--white {
     background-color: $color-white;
-    color: $color-grey-dark;
+    color: $color-grey-dark-1;
     /* border-radius: 50px; */
-    border-radius: 5rem;
+    border-radius: $br-medium;
 
     &::after {
       background-color: $color-white;
@@ -52,7 +59,7 @@
     background-color: $color-primary;
     color: $color-white;
     /* border-radius: 50px; */
-    border-radius: 5rem;
+    border-radius: $br-medium;
 
     &::after {
       background-color: $color-primary;
@@ -67,7 +74,7 @@
     height: 100%;
     width: 100%;
     /* border-radius: 50px; */
-    border-radius: 5rem;
+    border-radius: $br-medium;
     position: absolute;
     top: 0;
     left: 0;
@@ -85,7 +92,7 @@
 .btn-text {
   &:link,
   &:visited {
-    font-size: $default-font-size;
+    font-size: $font-size-default;
     color: $color-primary;
     display: inline-block;
     text-decoration: none;

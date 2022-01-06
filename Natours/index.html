@@ -300,52 +300,79 @@
     </div>
 
   </section>
+
+  <section>
+    <section class="section-book">
+      <div class="row">
+        <div class="book">
+          <div class="book__form">
+            <form action="#" class="form">
+              <div class="u-margin-bottom-medium">
+                <h2 class="heading-secondary">
+                  Start booking now
+                </h2>
+              </div>
+              <div class="form__group">
+                <input type="text" class="form__input" placeholder="Full Name" id="name" required>
+                <label for="name" class="form__label">Full Name</label> <!--the label requires an id from the corresponding input so they can be linked, the id goes in 'for=""'-->
+              </div>
+
+              <div class="form__group">
+                <input type="email" class="form__input" placeholder="Email address" id="email" required> <!--email type will allow the browser to identify if the address is valid-->
+                <label for="email" class="form__label">Email address</label> <!--the label requires an id from the corresponding input so they can be linked, the id goes in 'for=""'-->
+              </div>
+
+              <div class="form__group u-margin-bottom-medium">
+                <div class="form__radio-group">
+                  <input type="radio" class="form__radio-input" id="small" name="size"> <!--the input requires a name attribute that is applied to all other types that need to be linked together. then only one can be selected at a time-->
+                  <label for="small" class="form__radio-label">
+                    <span class="form__radio-button"></span> <!--radio btns can't be styled - instead can style this span as you'd like and hide the default radio btn-->
+                    Small tour group
+                  </label>
+                </div>
+
+                <div class="form__radio-group">
+                  <input type="radio" class="form__radio-input" id="large" name="size">
+                  <label for="large" class="form__radio-label">
+                    <span class="form__radio-button"></span>
+                    Large tour group
+                  </label>
+                </div>
+              </div>
+
+              <div class="form__group">
+                <button class="btn btn--green">Next Step &rarr;</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
   </main>
 
-    <!-- <section class="grid-test">
-      <div class="row">
-        <div class="col-1-of-2">Col 1 of 2</div>
-
-        <div class="col-1-of-2">Col 1 of 2</div>
+  <footer class="footer">
+    <div class="footer__logo-box">
+      <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+    </div>
+    <div class="row">
+      <div class="col-1-of-2"></div>
+      <div class="footer__navigation">
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Contact Us</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Careers</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Privacy</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+        </ul>
       </div>
-
-      <div class="row">
-        <div class="col-1-of-3">Col 1 of 3</div>
-
-        <div class="col-1-of-3">Col 1 of 3</div>
-
-        <div class="col-1-of-3">Col 1 of 3</div>
+      <div class="col-1-of-2">
+        <p class="footer__copyright">
+          Built by <a href="#" class="foooter__link">Jonas Schmedtmann</a> for his online course <a href="#" class="footer__link">Advanced CSS and Sass</a>. Copyright &copy; by Jonas Schmedtmann. 
+        </p>
       </div>
-
-      <div class="row">
-        <div class="col-1-of-3">Col 1 of 3</div>
-
-        <div class="col-2-of-3">Col 2 of 3</div>
-      </div>
-
-      <div class="row">
-        <div class="col-1-of-4">Col 1 of 4</div>
-
-        <div class="col-1-of-4">Col 1 of 4</div>
-
-        <div class="col-1-of-4">Col 1 of 4</div>
-
-        <div class="col-1-of-4">Col 1 of 4</div>
-      </div>
-
-      <div class="row">
-        <div class="col-1-of-4">Col 1 of 4</div>
-
-        <div class="col-1-of-4">Col 1 of 4</div>
-
-        <div class="col-2-of-4">Col 2 of 4</div>
-      </div>
-
-      <div class="row">
-        <div class="col-1-of-4">Col 1 of 4</div>
-
-        <div class="col-3-of-4">Col 3 of 4</div>
-      </div>
-    </section> -->
+    </div>
+  </footer>
+ 
   </body>
 </html>

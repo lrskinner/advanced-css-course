@@ -14,7 +14,7 @@
     // left: 0;
     width: 100%;
     backface-visibility: hidden; // keeps the back element hidden until hovered over
-    border-radius: 3px;
+    border-radius: $br-small;
     overflow: hidden; // the images on the front of the cards were overflowing and removing the border radius 
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 

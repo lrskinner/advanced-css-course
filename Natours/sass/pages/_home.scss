@@ -34,3 +34,26 @@
   padding: 15rem 0;
   position: relative;// so absolute positioning of background video applies
 }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+}
+
+.book {
+  background-image: linear-gradient(105deg, 
+    rgba($color-white, .9) 0%, /*gradient is white at the left side*/
+    rgba($color-white, .9) 50%, /*also white part way through*/
+    transparent 50%), /*colour is then switched to transparent, giving a clip-path effect*/
+    url(../img/nat-10.jpg); /*the background image can be more than one value, the linear gradient and the image*/
+  background-size: 100%;
+  border-radius: $br-small;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+  height: 50rem;
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}

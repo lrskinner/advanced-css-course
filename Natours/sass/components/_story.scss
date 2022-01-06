@@ -3,10 +3,10 @@
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
   background-color: rgba($color-white, .6);
-  border-radius: 3px;
+  border-radius: $br-small;
   padding: 6rem;
   padding-left: 9rem;
-  font-size: $default-font-size;
+  font-size: $font-size-default;
   transform: skewX(-12deg); //creates the skew effect of the section
 
   &__shape {

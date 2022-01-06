@@ -3,7 +3,7 @@ body {
   font-family: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: $color-grey-dark;
+  color: $color-grey-dark-1;
   /* padding: 30px; */
   /* to get 30px based on rem(10px) 30 / 10 = 3    */
   padding: 3rem;
@@ -65,13 +65,13 @@ body {
 }
 
 .heading-tertiary {
-  font-size: $default-font-size;
+  font-size: $font-size-default;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .paragraph {
-  font-size: $default-font-size;
+  font-size: $font-size-default;
 
   &:not(:last-child) { //selecting everything EXCEPT the last child (not pseudo class)
     margin-bottom: 3rem;
