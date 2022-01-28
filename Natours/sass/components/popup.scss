@@ -1,0 +1,61 @@
+.popup {
+  background-color: rgba($color-black, 0.9);
+  height: 100vh;
+  width: 100%;
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  &__content {
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    opacity: 1;
+    width: 80%;
+    @include center-horizontal-vertical;
+    //margin: 7rem auto; doing the same job as mixin
+    border-radius: $br-small;
+    display: table;
+    // treat the section as a table so the left and right sections can take up their whole height
+    overflow: hidden; // will stop the non-rounded corners of the images overlapping the border radius of the content div
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__left {
+    width: 33.33333333%;
+    display: table-cell;
+    // instead of using float: left, treat sections as tables, so they can be the same height
+    // float: left;
+  }
+
+  &__right {
+    width: 66.66666667%;
+    display: table-cell;
+    vertical-align: middle; // this will align both left and right 'table cells' content
+    // float: left;
+    padding: 3rem 4rem 5rem;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    // newer properties will need prefix's for broswer compatibility
+    -moz-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 4rem;
+    column-gap: 4rem; // 1em = 14px (1.4rem)
+    // default column-gap value is 1em (font size of element)
+    -moz-column-rule: 1px solid $color-grey-light-2;
+    column-rule: 1px solid $color-grey-light-2; // dividing border between columns
+
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; // requires language to be set in html
+  }
+}
