@@ -1,3 +1,13 @@
+/*
+0 - 600px:    Phone
+600 - 900px:  Tablet portrait
+900 - 1200px: Tablet landscape
+
+(1200 - 1800px is where our normal styling applies)
+
+1800px +:     Large desktop
+
+*/
 /* ANIMATIONS */
 @keyframes moveInLeft {
   /* at the start of the animation */
@@ -62,6 +72,16 @@ html {
   /* root font size is declared in the html element  */
   /*1rem = 10px */
   font-size: 10px;
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
 }
 
 body {

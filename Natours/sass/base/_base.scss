@@ -12,6 +12,14 @@ html {
   /* root font size is declared in the html element  */
   /*1rem = 10px */
   font-size: 10px;
+
+  @media (max-width: 600px) {
+    font-size: 50%;
+  }
+
+  @include respond-phone {
+    font-size: 50%;
+  }
 }
 
 body {
