@@ -24,8 +24,26 @@
 
 1800px +:     Large desktop
 
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- lrg-desktop
+
+1em = 16px
 */
 
-@mixin respond-phone {
-  @media (max-width: 600px) { @content };
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {@content}; //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {@content};  //900px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {@content}; //1200px
+  }
+  @if $breakpoint == lrg-desktop {
+    @media only screen and (min-width: 112.5em) {@content}; //1800px
+  }
 }
