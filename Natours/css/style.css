@@ -97,6 +97,12 @@ html {
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+}
+@media only screen and (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
 }
 
 body {
@@ -107,7 +113,6 @@ body {
   color: #777;
   /* padding: 30px; */
   /* to get 30px based on rem(10px) 30 / 10 = 3    */
-  padding: 3rem;
 }
 
 .heading-primary {
@@ -131,6 +136,12 @@ body {
   /* animation-delay: 3s; 
   the animation won't start until this timer has finished*/
 }
+@media only screen and (max-width: 37.5em) {
+  .heading-primary--main {
+    letter-spacing: 1rem;
+    font-size: 5rem;
+  }
+}
 .heading-primary--sub {
   display: block;
   /* font-size: 20px; */
@@ -140,6 +151,11 @@ body {
   letter-spacing: 1.75rem;
   /* rather than state each animation element, they can all come under animation only */
   animation: moveInRight ease-out 1s;
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: 0.5rem;
+  }
 }
 
 .heading-secondary {
@@ -152,6 +168,16 @@ body {
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s;
+}
+@media only screen and (max-width: 56.25em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
 }
 .heading-secondary:hover {
   transform: skew(15deg, 2deg) scale(1.1);
