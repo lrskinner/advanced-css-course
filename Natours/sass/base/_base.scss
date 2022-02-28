@@ -12,11 +12,11 @@ html {
   /* root font size is declared in the html element  */
   font-size: 62.5%; //1rem = 10px, 10/16 = 62.5%
   
-  @include respond(tab-land) { // width < 900?
+  @include respond(tab-land) { // width < 900
     font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%%
   }
 
-  @include respond(tab-port) { // width < 600?
+  @include respond(tab-port) { // width < 600
     font-size: 50%; //1rem = 8px, 8/16 = 50%
   }
 

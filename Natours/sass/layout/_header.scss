@@ -19,6 +19,11 @@
   /* this creates the clipping effect in the bottom right corner */
   /* each value pair is referring th how much of that corner (going clockwise) is clipped */
 
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
   // child elements can be nested inside the parent element using '&'
   &__logo-box {
     position: absolute;

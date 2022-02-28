@@ -3,9 +3,17 @@
   padding: 10rem 0;
   font-size: $font-size-small;
 
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
   &__logo-box {
     text-align: center;
     margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 0;
+    }
   }
 
   &__logo {
@@ -17,10 +25,19 @@
     border-top: 1px solid $color-grey-light-2;
     padding-top: 2rem;
     display: inline-block; // the top border will only occupy the space of the content and not the whole element
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__list {
     list-style: none;
+
+    @include respond(tab-port) {
+      padding-bottom: 2rem;
+    }
   }
 
   &__item {
@@ -54,5 +71,11 @@
     border-top: 1px solid $color-grey-light-2;
     color: $color-grey-light-1;
     width: 80%;
+    float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
   }
 }
