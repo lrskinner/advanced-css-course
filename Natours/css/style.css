@@ -570,6 +570,11 @@ body {
   border-bottom: 3px solid transparent;
   transition: all 0.3;
 }
+@media only screen and (max-width: 56.25em) {
+  .form__input {
+    padding: 1rem 1.5rem;
+  }
+}
 .form__input:focus:invalid {
   border-bottom: 3px solid #ff7730;
 }
@@ -607,6 +612,11 @@ body {
   cursor: pointer;
   position: relative;
   padding-left: 4.5rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .form__radio-label {
+    padding-left: 3.5rem;
+  }
 }
 .form__radio-button {
   height: 3rem;
@@ -1100,9 +1110,26 @@ body {
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   height: 50rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .book {
+    background-size: 250%;
+    height: 46.5rem;
+  }
+}
 .book__form {
   width: 50%;
   padding: 6rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .book__form {
+    width: 100%;
+    padding: 4rem;
+  }
+}
+@media only screen and (max-width: 75em) {
+  .book__form {
+    padding: 3.2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
