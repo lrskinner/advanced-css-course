@@ -9,6 +9,16 @@
   font-size: $font-size-default;
   transform: skewX(-12deg); //creates the skew effect of the section
 
+  @include respond(tab-port){
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone){
+    transform: skewX(0);
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -20,6 +30,10 @@
     clip-path: circle(50% at 50% 50%); // to make square shape into a circle
     transform: translateX(-3rem) skewX(12deg); // creates more space around the circle shape, skewX needs to be included in this one rule - 2 transform rules can't exist in the same element
     position: relative; // needs to be relative for the absolute in __caption to work
+
+    @include respond(phone){
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__img {
@@ -30,6 +44,10 @@
 
   &__text {
     transform: skewX(12deg); // reverses the effect of the skew applied to the whole section
+
+    @include respond(phone){
+      transform: skewX(0);
+    }
   }
 
   &__caption { // initial state before the hover on story div (caption is hidden & further down- 0 on y axis in transform)

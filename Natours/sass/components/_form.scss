@@ -17,6 +17,10 @@
     transition: all 0.3;
 
     @include respond(tab-port) {
+      width: 100%;
+    }
+
+    @include respond(tab-port) {
       padding: 1rem 1.5rem;
     }
 
@@ -54,6 +58,11 @@
   &__radio-group {
     display: inline-block; //radio buttons will be displayed next to eachother rather than ontop
     width: 49%; //50% was too large, it pushed the right radio button down below the other
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__radio-input {

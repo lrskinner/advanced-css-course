@@ -25,12 +25,32 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0); // repeat the translate that occurs in the mixin - both values need to be present, otherwise any subsequent transform properties will override any previous
     transition: all .4s;
+    display: flex;
+
+    h2, h3 {
+      @include respond(tab-port) {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+      }
+    }
+
+    .btn {
+      @include respond(tab-port) {
+        width: 100%;
+        text-align: center;
+      }
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
     height: auto;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 
   &__left {
@@ -38,6 +58,10 @@
     display: table-cell;
     // instead of using float: left, treat sections as tables, so they can be the same height
     // float: left;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 
   &__right {
@@ -46,6 +70,10 @@
     vertical-align: middle; // this will align both left and right 'table cells' content
     // float: left;
     padding: 3rem 4rem 5rem;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 
   &__text {
@@ -64,6 +92,11 @@
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto; // requires language to be set in html
+
+    @include respond(phone) {
+      -moz-column-count: 1;
+      column-count: 1;
+    }
   }
 
   // open states (show popup)
