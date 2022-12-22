@@ -31,7 +31,22 @@
       @include respond(tab-port) {
         width: 100%;
         text-align: center;
-        margin-bottom: 0;
+      }
+    }
+
+    h2 {
+      &.u-margin-bottom-small {
+        @include respond(tab-port) {
+          margin-bottom: 1rem !important;
+        }
+      }
+    }
+
+    h3 {
+      &.u-margin-bottom-small {
+        @include respond(tab-port) {
+          margin-bottom: 0 !important;
+        }
       }
     }
 
